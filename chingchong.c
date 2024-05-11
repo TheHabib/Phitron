@@ -1,15 +1,23 @@
 #include <stdio.h>
-int main()
-{
 
-    int ary[4] = {1, 2, 3, 4};
+#define ROWS 3
+#define COLS 3
 
-    int *p;
+void printArray(int array[][COLS], int rows, int cols) {
+    printf("Array elements:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", array[i][j]);
+        }
+        printf("\n");
+    }
+}
 
-    p = ary + 3;
+int main() {
+    int myArray[ROWS][COLS] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-    *p = 5;
+    // Call the function and pass the 2D array as a parameter
+    printArray(myArray, ROWS, COLS);
 
-    printf("%d\n", ary[3]);
-
+    return 0;
 }
