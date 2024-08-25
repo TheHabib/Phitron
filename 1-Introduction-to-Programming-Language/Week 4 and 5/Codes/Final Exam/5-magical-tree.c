@@ -47,8 +47,8 @@ int main() {
 
 
 /*
-    int i, branch=5, stars=12;
-    int row=7; //input
+    Node i, branch=5, stars=12;
+    Node row=7; //input
     for(i=1; i<=row; i+=2) {
         branch += 1;
     }

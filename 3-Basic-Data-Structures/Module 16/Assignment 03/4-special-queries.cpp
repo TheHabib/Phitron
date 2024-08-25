@@ -3,6 +3,8 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
     queue<string> qu;
     int q, command;
     cin >> q;
@@ -15,10 +17,10 @@ int main() {
         }
         else if(command==1) {
             if(qu.empty()) {
-                cout << "Invalid" << endl;
+                cout << "Invalid" << '\n';
             }
             else{
-                cout << qu.front() << endl;
+                cout << qu.front() << '\n';
                 qu.pop();
             }
         }
