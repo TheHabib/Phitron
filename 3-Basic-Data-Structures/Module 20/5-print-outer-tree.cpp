@@ -60,28 +60,28 @@ Node *input_tree() {
 }
 
 
-void leftorder(Node *root) {
+void leftree(Node *root) {
     if (root == NULL) {
         return;
     }
 
     left_tree.push_back(root->val);
 
-    leftorder(root->left);
+    leftree(root->left);
 
     if (root->left == NULL) {
-        leftorder(root->right);
+        leftree(root->right);
     }
 }
 
-void rightorder(Node *root) {
+void righttree(Node *root) {
     if (root == NULL) {
         return;
     }
     right_tree.push_back(root->val);
-    rightorder(root->right);
+    righttree(root->right);
     if (root->right == NULL) {
-        rightorder(root->left);
+        righttree(root->left);
     }
 }
 
@@ -89,8 +89,8 @@ void rightorder(Node *root) {
 int main() {
     Node *root = input_tree();
 
-    leftorder(root->left);
-    rightorder(root->right);
+    leftree(root->left);
+    righttree(root->right);
     reverse(left_tree.begin(), left_tree.end());
     vector<int> outer_tree;
     outer_tree.insert(outer_tree.end(), left_tree.begin(), left_tree.end());
